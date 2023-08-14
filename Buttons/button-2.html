@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button-2</title>
+</head>
+
+<style>
+    body {
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        margin: 25%;
+    }
+
+    .button {
+        padding: 1.1rem 2.2rem;
+        font-size: 1rem;
+        color: #000;
+        font-weight: 600;
+        transition: all .2s;
+        position: relative;
+        border: none;
+        background: #BEADFA;
+    }
+
+    .button:before,
+    .button:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        background: #dddfff;
+        height: 108%;
+        width: 0;
+        z-index: -1;
+        transition: all .7s;
+        transform: translateY(-50%);
+    }
+
+    .button:before {
+        left: 0%;
+    }
+
+    .button:after {
+        right: 0%;
+    }
+
+    .button:hover {
+        color: #000;
+        box-shadow: #dddfff 0 30px 60px -12px inset, #dddfff 0 18px 36px -18px inset;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .button:hover::before {
+        width: 50%;
+        left: 50%;
+    }
+
+    .button:hover::after {
+        width: 50%;
+        right: 50%;
+    }
+</style>
+
+<body>
+    <button class="button">
+        Button
+    </button>
+</body>
+
+</html>
