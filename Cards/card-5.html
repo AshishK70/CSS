@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- links for icons which will be used  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <title>Card-5</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #3a3b62;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 100px;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .up {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5em;
+    }
+
+    .down {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5em;
+    }
+
+    ion-icon {
+        font-size: 40px;
+    }
+
+    .card1 {
+        width: 200px;
+        height: 200px;
+        outline: none;
+        border: none;
+        background-color: white;
+        border-radius: 200px 5px 5px 5px;
+    }
+
+    .github {
+        margin: 1.5em 0 0 1.2em;
+        fill: #dfdfdfd;
+    }
+
+    .card2 {
+        width: 200px;
+        height: 200px;
+        outline: none;
+        border: none;
+        background-color: white;
+        border-radius: 5px 200px 5px 5px;
+    }
+
+    .instagram {
+        margin: 1.5em 0 0 -1.2em;
+        fill: #dfdfdfd;
+    }
+
+    .card3 {
+        width: 200px;
+        height: 200px;
+        outline: none;
+        border: none;
+        background-color: white;
+        border-radius: 5px 5px 5px 200px;
+    }
+
+    .linkedin {
+        margin: -1.5em 1.2em 0 0;
+        ;
+        fill: #dfdfdfd;
+    }
+
+    .card4 {
+        width: 200px;
+        height: 200px;
+        outline: none;
+        border: none;
+        background-color: white;
+        border-radius: 5px 5px 200px 5px;
+    }
+
+    .youtube {
+        margin: -1.5em 0 0 1.2em;
+        fill: #dfdfdfd;
+    }
+
+    .card1:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        background-color: #000;
+        color: white;
+    }
+
+    .card2:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        background-color: red;
+        color: white;
+    }
+
+    .card3:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        background-color: red;
+        color: white;
+    }
+
+    .card4:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        background-color: blue;
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="up">
+            <button class="card1">
+                <ion-icon name="logo-github" class="github"></ion-icon>
+            </button>
+            <button class="card2">
+                <ion-icon name="logo-instagram" class="instagram"></ion-icon>
+            </button>
+        </div>
+        <div class="down">
+            <button class="card3">
+                <ion-icon name="logo-youtube" class="youtube"></ion-icon>
+            </button>
+            <button class="card4">
+                <ion-icon name="logo-linkedin" class="linkedin"></ion-icon>
+            </button>
+            <!-- changed the button because youtube and instagram will have same background -->
+        </div>
+    </div>
+</body>
+
+</html>
