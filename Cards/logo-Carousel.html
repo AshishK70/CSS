@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image-carousel</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #dfdfdf;
+    }
+
+    @keyframes slide {
+        from {
+            transform: translateX(0%);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    .logos {
+        overflow: hidden;
+        padding: 80px 0;
+        white-space: nowrap;
+    }
+
+    .logo-slide {
+
+        background-color: #dfdfdf;
+        animation: 15s slide infinite linear;
+        display: inline-block;
+    }
+
+    .logo-slide img {
+        height: 100px;
+        margin: 0 30px;
+        mix-blend-mode: multiply;
+    }
+</style>
+
+<body>
+    <div class="logos">
+        <div class="logo-slide">
+            <img src="/Logos/github.png" alt="">
+            <img src="/Logos/google-1088004_1920.png" alt="">
+            <img src="/Logos/instagram-1581266_1920.jpg" alt="">
+            <img src="/Logos/koenigsegg.png" alt="">
+            <img src="/Logos/Linkedin-Logo.png" alt="">
+            <img src="/Logos/tesla.webp" alt="">
+            <img src="/Logos/youtube-2844504_1920.png" alt="">
+        </div>
+        <!-- to make it look seamleass -->
+        <div class="logo-slide">
+            <img src="/Logos/github.png" alt="">
+            <img src="/Logos/google-1088004_1920.png" alt="">
+            <img src="/Logos/instagram-1581266_1920.jpg" alt="">
+            <img src="/Logos/koenigsegg.png" alt="">
+            <img src="/Logos/Linkedin-Logo.png" alt="">
+            <img src="/Logos/tesla.webp" alt="">
+            <img src="/Logos/youtube-2844504_1920.png" alt="">
+        </div>
+    </div>
+    <div>
+        <h1>Hope you liked it !</h1>
+    </div>
+</body>
+
+</html>
