@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- links for icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <title>Button-5</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #000;
+    }
+
+    /* now lets some style to icon and button */
+    ion-icon {
+        font-size: 2rem;
+        color: #000;
+    }
+
+    .button {
+        position: relative;
+        width: 150px;
+        height: 60px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        border: none;
+        background-color: #dfdfdf;
+        overflow: hidden;
+    }
+
+    .button,
+    .button__icon,
+    .button__text {
+        transition: all 0.3s;
+    }
+
+    .button .button__text {
+        transform: translateX(22px);
+        font-weight: 600;
+    }
+
+    .button .button__icon {
+        position: absolute;
+        transform: translateX(100px);
+        height: 100%;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button .btn {
+        width: 30px;
+        fill: #000;
+    }
+
+    .button:hover {
+        background-color: #b59a9a;
+    }
+
+    .button:hover .button__text {
+        color: transparent;
+    }
+
+    .button:hover .button__icon {
+        width: 150px;
+        transform: translateX(0);
+    }
+
+    /* to show border i'm just increasing you can choose of your liking */
+    .button:active {
+        border: 5px solid #dfdfdf;
+    }
+</style>
+
+<body>
+    <!-- now lets build the body of the button -->
+    <div>
+        <button class="button" type="button">
+            <span class="button__text">
+                Download
+            </span>
+            <span class="button__icon">
+                <!-- lets use ion-icon cdn to import icons -->
+                <ion-icon name="download-outline" class="btn">
+            </span>
+        </button>
+    </div>
+</body>
+
+</html>
