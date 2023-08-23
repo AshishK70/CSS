@@ -5,21 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- lets get link that we will use in this video -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css">
-    <title>Document</title>
+    <title>card-6 </title>
 </head>
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
     body {
         background-color: #000;
     }
 
+    /* lets add css now */
     .container {
         height: 100vh;
-        /* width: 100vw; */
-        max-height: 800px;
-        /* max-width: 1280px; */
-        /* min-height: 600px; */
+        max-height: 80%;
         min-width: 500px;
         display: flex;
         justify-content: space-evenly;
@@ -36,23 +41,23 @@
         position: relative;
     }
 
-    .border:hover {
+    .borer:hover {
         border: 1px solid #fff;
     }
 
     .card {
         height: 230px;
         width: 300px;
-        background: #808080;
+        background-color: #808080;
         border-radius: 10px;
         transition: background 0.8s;
-        overflow: hidden;
+        box-shadow: 0px 70px 63px -63px #fff;
         background: #000;
-        box-shadow: 0px 70px 63px -60px #fff;
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
+        overflow: hidden;
     }
 
     .card0 {
@@ -60,33 +65,17 @@
         background-size: 300px;
     }
 
+    /* apply any side you want left or right i'll be choosing left */
     .card0:hover {
         background: url("/images/cards/zoro2.jpeg") left center no-repeat;
         background-size: 600px;
+        cursor: pointer;
     }
 
-    .card0:hover h2 {
-        opacity: 1;
-    }
-
-    .card0:hover .fa {
-        opacity: 1;
-    }
-
-
-
-    .card1:hover h2 {
-        opacity: 1;
-    }
-
-    .card1:hover .fa {
-        opacity: 1;
-    }
-
+    /* copy and  pasting for image 2/card 2*/
     .card1 {
         background: url("/images/cards/luffy2.jpeg") center center no-repeat;
         background-size: 300px;
-        cursor: pointer;
     }
 
     .card1:hover {
@@ -95,18 +84,9 @@
         cursor: pointer;
     }
 
-    .card2:hover h2 {
-        opacity: 1;
-    }
-
-    .card2:hover .fa {
-        opacity: 1;
-    }
-
     h2 {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         color: #fff;
-        margin: 20px;
         opacity: 0;
         transition: opacity 1s;
     }
@@ -116,11 +96,28 @@
         transition: opacity 1s;
     }
 
+    /* lets move step by step */
+    .card0:hover h2 {
+        opacity: 1;
+    }
+
+    .card0:hover .fa {
+        opacity: 1;
+    }
+
+    .card1:hover h2 {
+        opacity: 1;
+    }
+
+    .card1:hover .fa {
+        opacity: 1;
+    }
+
     .icons {
         position: absolute;
         fill: #fff;
         color: #fff;
-        height: 130px;
+        height: 150px;
         width: 50px;
         display: flex;
         flex-direction: column;
@@ -128,14 +125,19 @@
         justify-content: space-around;
     }
 </style>
+<!-- lets build html first -->
 
 <body>
-
+    <!-- creating a main box -->
     <div class="box">
+        <!-- creating a container for hover affects -->
         <div class="container">
+            <!-- creating card -->
             <div class="card card0">
+                <!-- adding border div -->
                 <div class="border">
                     <h2>Zoro</h2>
+                    <!-- creating div for icons -->
                     <div class="icons">
                         <i class="fa fa-brands fa-instagram"></i>
                         <i class="fa fa-brands fa-github"></i>
@@ -144,10 +146,12 @@
                     </div>
                 </div>
             </div>
-
+            <!-- repeating it for different card -->
             <div class="card card1">
+                <!-- adding border div -->
                 <div class="border">
                     <h2>Luffy</h2>
+                    <!-- creating div for icons -->
                     <div class="icons">
                         <i class="fa fa-brands fa-instagram"></i>
                         <i class="fa fa-brands fa-github"></i>
