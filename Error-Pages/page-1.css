@@ -1,0 +1,573 @@
+/* it's completely empty for now so let's get started  */
+/* first we need some google fonts so i'll use cdn method */
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+i,
+button,
+ul,
+li,
+input,
+body {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* lets add some focus method */
+h1:focus,
+h2:focus,
+h3:focus,
+h4:focus,
+h5:focus,
+h6:focus,
+i:focus,
+button:focus,
+ul:focus,
+li:focus,
+input:focus,
+body:focus {
+    outline: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    font-family: "Barlow", sans-serif;
+    background: #695681;
+    /* we can change background later of our choosing */
+}
+
+/* now let's style the nav and it's components */
+nav .menu {
+    width: 100%;
+    height: 80px;
+    /* setting position absolute as we want to see that items at the top */
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    z-index: 3;
+    box-sizing: border-box;
+}
+
+nav .menu .website_name {
+    color: #dfdfdf;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 20px;
+    padding: 4px 8px;
+    /* keeping background for now we can change later */
+    /* background: white; */
+    border-radius: 5px;
+    transition: all ease-in-out 0.4s;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+nav .menu .website_name:hover {
+    opacity: 1;
+    color: black;
+}
+
+nav .menu .menu_links {
+    opacity: 0.5;
+    transition: all ease-in-out 0.4s;
+}
+
+nav .menu .menu_links:hover {
+    opacity: 1;
+    transition: all ease-in-out 0.4s;
+}
+
+/* adding some media queries */
+@media screen and (max-width: 768px) {
+    nav .menu .menu_links {
+        display: none;
+    }
+}
+
+/* we did that to hide the nav links when the screen size is below 768px */
+nav .menu .menu_links .link {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 0 50px 0 0;
+    position: relative;
+    letter-spacing: 2px;
+    transition: all 0.3s 0.3s ease;
+    text-decoration: none;
+}
+
+nav .menu .menu_links .link:last-child {
+    margin-right: 0;
+}
+
+nav .menu .menu_links .link::before {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 4px;
+    background: linear-gradient(90deg, blue 0%, red 100%);
+    bottom: -10px;
+    transition: all 0.4s cubic-bezier(0.82, 0.02, 0.13, 1.26);
+    left: 100%;
+}
+
+nav .menu .menu_links .link:hover {
+    opacity: 1;
+    color: black;
+}
+
+nav .menu .menu_links .link:hover::before {
+    width: 60px;
+    left: 0;
+}
+
+nav .menu .menu_icon {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width:768px) {
+    nav .menu .menu_icon {
+        display: flex;
+    }
+}
+
+nav .menu .menu_icon .icon {
+    width: 24px;
+    height: 2px;
+    background: white;
+    position: absolute;
+}
+
+nav .menu .menu_icon .icon::before,
+nav .menu .menu_icon .icon::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    position: absolute;
+    transition: all 0.3s 0.2s cubic-bezier(0.49, 0.04, 0, 1.55);
+}
+
+nav .menu .menu_icon .icon::before {
+    transform: translateY(-8px);
+}
+
+nav .menu .menu_icon .icon::after {
+    transform: translateY(8px);
+}
+
+nav .menu .menu_icon:hover .icon {
+    background: #FFEDC0;
+}
+
+nav .menu .menu_icon:hover .icon::before {
+    transform: translateY(-10px);
+}
+
+nav .menu .menu_icon:hover .icon::after {
+    transform: translateY(10px);
+}
+
+/* lets style the wrapper class now */
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.wrapper .container {
+    margin: 0 auto;
+    transition: all 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.wrapper .container .scene {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    vertical-align: middle;
+}
+
+.wrapper .container .one,
+.wrapper .container .two,
+.wrapper .container .three,
+.wrapper .container .cirlce,
+.wrapper .container .p404 {
+    width: 60%;
+    height: 60%;
+    top: 20% !important;
+    left: 20% !important;
+    min-width: 400px;
+    min-height: 400px;
+}
+
+.wrapper .container .one .content,
+.wrapper .container .two .content,
+.wrapper .container .three .content,
+.wrapper .container .cirlce .content,
+.wrapper .container .p404 .content {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: content 0.5s cubic-bezier(1, 0.06, 0.25, 1) backwards;
+}
+
+/* lets create the animation just mentioned above */
+@keyframes content {
+    0% {
+        width: 0;
+    }
+}
+
+/* now we will target the piece class */
+.wrapper .container .one .content .piece,
+.wrapper .container .two .content .piece,
+.wrapper .container .three .content .piece,
+.wrapper .container .cirlce .content,
+.piece .wrapper .container .p404 .content .piece {
+    width: 200px;
+    height: 80px;
+    display: flex;
+    position: absolute;
+    border-radius: 70px;
+    z-index: 1;
+    animation: pieceLeft 8s cubic-bezier(1, 0.06, 0.25, 1) backwards;
+}
+
+@keyframes pieceLeft {
+    50% {
+        left: 80%;
+        width: 10%;
+    }
+}
+
+@keyframes pieceRight {
+    100% {
+        right: 80%;
+        width: 10%;
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    .wrapper .container .one,
+    .wrapper .container .two,
+    .wrapper .container .three,
+    .wrapper .container .cirlce,
+    .wrapper .container .p404 {
+        width: 90%;
+        height: 90%;
+        top: 5% !important;
+        left: 5% !important;
+        min-width: 280px;
+        min-height: 280px;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+
+    .wrapper .container .one,
+    .wrapper .container .two,
+    .wrapper .container .three,
+    .wrapper .container .cirlce,
+    .wrapper .container .p404 {
+        width: 60%;
+        height: 60%;
+        top: 20% !important;
+        left: 20% !important;
+        min-width: 280px;
+        min-height: 280px;
+    }
+
+}
+
+.wrapper .container .text {
+    width: 60%;
+    height: 40%;
+    min-width: 400px;
+    min-height: 500px;
+    position: absolute;
+    margin: 40px 0;
+    animation: text 0.6s 1.8s ease backwards;
+}
+
+@keyframes text {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+}
+
+@media screen and (max-width:768px) {
+    .wrapper .container .text {
+        min-height: 400px;
+        height: 80%;
+    }
+}
+
+.wrapper .container .text article {
+    width: 400px;
+    position: absolute;
+    bottom: 0;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media screen and (max-width:768px) {
+    .wrapper .container .text article {
+        width: 100%;
+    }
+}
+
+/* as we are using p tag  */
+.wrapper .container .text article p {
+    color: white;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    margin: 0 0 40px 0;
+    text-shadow: 6px 6px 10px #1b171f;
+}
+
+.wrapper .container .text article button {
+    height: 40px;
+    padding: 0 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 15px 20px rgba(54, 24, 79, 0.5);
+    z-index: 3;
+    color: #696581;
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.wrapper .container .text article button:hover {
+    box-shadow: 0 10px -10px rgba(54, 24, 79, 0.5);
+    transform: rotateY(5px);
+    background-color: #c76060;
+    color: #dfdfdf;
+}
+
+/* now lets style the 404 class  and for me 50px looks good*/
+.wrapper .container .p404 {
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #dfdfdf;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: absolute;
+    animation: anime404 0.6s cubic-bezier(0.3, 0.8, 1, 1.05) both;
+    animation-delay: 1s;
+}
+
+@keyframes anime404 {
+    0% {
+        opacity: 0;
+        transform: scale(10) skew(30deg, 30deg);
+    }
+}
+
+@media screen and (max-width:768px) {
+    .wrapper .container .p404 {
+        font-size: 100px;
+    }
+}
+
+.wrapper .container .p404:nth-of-type(2) {
+    color: #36184f;
+    z-index: 1;
+    animation-delay: 1s;
+    filter: blur(10px);
+    opacity: 0.8s;
+}
+
+.wrapper .container .cirlce {
+    position: absolute;
+}
+
+.wrapper .container .cirlce::before {
+    content: '';
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    background-color: rgba(52, 24, 79, 0.2);
+    border-radius: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 5px 20px 40px rgba(52, 24, 79, 0.25), inset 5px 0 5px rgba(50, 36, 61, 0.3), inset 5px 5px 20px rgba(50, 36, 62, 0.25), 2px 2px 5px rgba(255, 255, 255, 0.2);
+    animation: circle 0.8s cubic-bezier(1, 0.06, 0.25, 1) backwards;
+}
+
+@keyframes circle {
+    0% {
+        width: 0;
+        height: 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .wrapper .container .cirlce::before {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+.wrapper .container .one .content::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-color: rgba(54, 24, 79, 0.3);
+    border-radius: 100%;
+    box-shadow: inset 5px 20px 40px rgba(52, 24, 79, 0.25), inset 5px 0 5px rgba(50, 36, 61, 0.3), inset 5px 5px 20px rgba(50, 36, 62, 0.25), 2px 2px 5px rgba(255, 255, 255, 0.2);
+    animation: circle 0.8s cubic-bezier(1, 0.06, 0.25, 1) backwards;
+    /* now we have some smooth affects on load */
+}
+
+@media screen and (max-width:768px) {
+    .wrapper .container .one .content::before {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+.wrapper .container .one .piece {
+    background: linear-gradient(90deg, #8077ea 13%, #eb73ef 94%);
+}
+
+.wrapper .container .one .piece:nth-child(1) {
+    right: 15%;
+    top: 18%;
+    height: 30px;
+    width: 130x;
+    animation-delay: 0.5s;
+    animation-name: pieceRight;
+}
+
+.wrapper .container .one .piece:nth-child(2) {
+    left: 15%;
+    top: 45%;
+    height: 50px;
+    width: 150x;
+    animation-delay: 1s;
+    animation-name: pieceLeft;
+}
+
+.wrapper .container .one .piece:nth-child(3) {
+    left: 10%;
+    top: 75%;
+    height: 20px;
+    width: 70x;
+    animation-delay: 1.5s;
+    animation-name: pieceLeft;
+}
+
+.wrapper .container .two .content .piece {
+    background: linear-gradient(90deg, #ffedc0 0%, #ff9d87 100%);
+}
+
+.wrapper .container .two .piece:nth-child(1) {
+    left: 0%;
+    top: 25%;
+    height: 40px;
+    width: 120x;
+    animation-delay: 2s;
+    animation-name: pieceLeft;
+}
+
+.wrapper .container .two .piece:nth-child(2) {
+    right: 15%;
+    top: 35%;
+    height: 50px;
+    width: 180x;
+    animation-delay: 2.5s;
+    animation-name: pieceRight;
+}
+
+.wrapper .container .two .piece:nth-child(3) {
+    right: 10%;
+    top: 80%;
+    height: 20px;
+    width: 70x;
+    animation-delay: 3s;
+    animation-name: pieceRight;
+}
+
+.wrapper .container .three .content .piece {
+    background: #fb8a8a
+}
+
+.wrapper .container .three .piece:nth-child(1) {
+    left: 25%;
+    top: 35%;
+    height: 20px;
+    width: 80x;
+    animation-delay: 3.5s;
+    animation-name: pieceLeft;
+}
+
+.wrapper .container .three .piece:nth-child(2) {
+    right: 10%;
+    top: 55%;
+    height: 50px;
+    width: 180x;
+    animation-delay: 4s;
+    animation-name: pieceRight;
+}
+
+.wrapper .container .three .piece:nth-child(3) {
+    left: 40%;
+    top: 68%;
+    height: 20px;
+    width: 70x;
+    animation-delay: 4.5s;
+    animation-name: pieceLeft;
+}
+
+/* now we need to just adjust the size of 404 and we're done with our error page */
